@@ -1,7 +1,10 @@
-function photographerFactory(data) {
-    const { name, portrait } = data;
+import { routes } from "../../config/routes.js";
 
-    const picture = `assets/photographers/${portrait}`;
+export function photographerFactory(data) {
+    const { name, portrait } = data;
+    const __PATH ='../';
+    const no_image = __PATH+"assets/photographers/account.png" ;
+    const picture = routes.__DIRNAME_PHOTOGRAPHER_PORTRAIT()+portrait;
 
     function getUserCardDOM() {
         const article = document.createElement( 'article' );
