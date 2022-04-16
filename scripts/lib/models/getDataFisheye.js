@@ -1,7 +1,7 @@
 // Importation de la route d'accès à la base de données
-import {routes} from '../config/routes.js';
+import {routes} from '../../config/routes.js';
 
-const __PATH ='../';
+const __PATH ='../../../';
 
 export async function getDataFisheye() {
   
