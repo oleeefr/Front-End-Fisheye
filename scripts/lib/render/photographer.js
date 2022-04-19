@@ -11,7 +11,7 @@ export function photographerFactory(data) {
         const article = document.createElement( 'article' );
         const img = document.createElement( 'img' );
            img.setAttribute("src", picture);
-           img.setAttribute("alt","Portrait photographe");
+           img.setAttribute("alt","Portrait "+name);
         const h2 = document.createElement( 'h2' );
             h2.textContent = name;
             h2.setAttribute("class","hidden");
