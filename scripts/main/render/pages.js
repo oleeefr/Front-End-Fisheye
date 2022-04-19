@@ -1,4 +1,4 @@
-let ___PATH = './';
+let ___PATH = '../../lib/render/';
 
 // fonction de render (de Vue) pour afficher la page d'accueil
 export async function index () {
