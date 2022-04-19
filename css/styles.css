@@ -35,13 +35,21 @@ h1 {
   align-items: center;
   flex-direction: column;
 }
-.photographer_section article h2 {
+.photographer_section article dl {
+  text-align: center;
+}
+.photographer_section article dl dt {
   color: #D3573C;
   font-size: 36px;
+}
+.photographer_section article dl .price {
+  color: gray;
 }
 .photographer_section article img {
   height: 200px;
   width: 200px;
+  border-radius: 106px;
+  object-fit: cover;
 }
 
 #contact_modal {
