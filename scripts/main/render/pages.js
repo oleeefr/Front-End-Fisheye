@@ -4,7 +4,7 @@ let ___PATH = '../../lib/render/';
 export async function index () {
 
     // importation de la liste des photographes
-    let pageModuleData = await import ('../requests/selectAllPhotographers.js');
+    let pageModuleData = await import ('../requests/getAllPhotographers.js');
     let photographers = pageModuleData.photographers;
 
     let pageModuleRender = await import(___PATH+"listPhotographers.js");
@@ -13,7 +13,7 @@ export async function index () {
  
  // fonction de render (de Vue) pour afficher la page Portrait Photographe
  export async function photographer () {
-     let pageModuleData = await import ('../requests/selectAllMediaByIdPhotographer');
+     let pageModuleData = await import ('../requests/getAllMediaByIdPhotographer');
      let pageModuleRenderPhotographer = await import(___PATH+"photographer.js");
  }
  
