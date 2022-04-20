@@ -4,11 +4,12 @@ import {index, photographer, notFound404} from './render/pages.js';
 export async function controleur (page) {
 
     switch (page) {
-        case '/index.html':
+        case "" :
+        case "index.html":
             index();
             break;
 
-        case '/photographer.html':
+        case 'photographer.html':
             photographer();
             break;
 
