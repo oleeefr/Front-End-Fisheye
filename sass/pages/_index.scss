@@ -34,29 +34,36 @@ h1 {
     gap: 70px;
     margin-top: 100px;
 
-    article {
-        justify-self: center;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-        
-        dl {
-            text-align: center;
-            dt {
-                color: #D3573C;
-                font-size: 36px;
-            }
-            .price {
-                color : gray;
-            }
-        }
+    a {
+        cursor: pointer;
+        text-decoration: none;
+        color: black;
 
-        img {
-            height: 200px;
-            width: 200px;
-            border-radius: 106px;
-            object-fit: cover;
+        article {
+            justify-self: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            
+            dl {
+                text-align: center;
+                dt {
+                    color: #D3573C;
+                    font-size: 36px;
+                }
+                .price {
+                    color : gray;
+                }
+            }
+    
+            img {
+                height: 200px;
+                width: 200px;
+                border-radius: 106px;
+                object-fit: cover;
+            }
         }
     }
+
 }

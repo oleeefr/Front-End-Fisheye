@@ -32,24 +32,29 @@ h1 {
   gap: 70px;
   margin-top: 100px;
 }
-.photographer_section article {
+.photographer_section a {
+  cursor: pointer;
+  text-decoration: none;
+  color: black;
+}
+.photographer_section a article {
   justify-self: center;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
 }
-.photographer_section article dl {
+.photographer_section a article dl {
   text-align: center;
 }
-.photographer_section article dl dt {
+.photographer_section a article dl dt {
   color: #D3573C;
   font-size: 36px;
 }
-.photographer_section article dl .price {
+.photographer_section a article dl .price {
   color: gray;
 }
-.photographer_section article img {
+.photographer_section a article img {
   height: 200px;
   width: 200px;
   border-radius: 106px;
