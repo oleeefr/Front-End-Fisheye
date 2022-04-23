@@ -52,17 +52,12 @@ h1 {
                     color: #D3573C;
                     font-size: 36px;
                 }
-                .price {
+                dd:nth-child(4) {
                     color : gray;
                 }
             }
     
-            img {
-                height: 200px;
-                width: 200px;
-                border-radius: 106px;
-                object-fit: cover;
-            }
+            @include thumbnails;
         }
     }
 

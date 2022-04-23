@@ -1,0 +1,8 @@
+@mixin thumbnails {
+    img {
+        height: 200px;
+        width: 200px;
+        border-radius: 106px;
+        object-fit: cover;
+    }
+}

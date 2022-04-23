@@ -8,51 +8,51 @@ export function photographerFactory(data) {
                      portrait.trim().length == 0)? no_image: routes.__DIRNAME_PHOTOGRAPHER_PORTRAIT()+portrait;
     
 
+    /* format render (de vue) détaillé du profil */
     function getUserDescriptionDOM () {
         
-    let dl = document.createElement( 'dl');
-        dl.setAttribute("aria-label","Description");
-    const dt = document.createElement( 'dt');
-        dt.textContent = name;
-    const ddLocalisation = document.createElement( 'dd');
-        ddLocalisation.textContent = city+", "+country;
-    const ddTagline = document.createElement( 'dd');
-        ddTagline.textContent = tagline;
+    let dl = getUserCardDOMMini();
     const ddPrice = document.createElement( 'dd');
-        ddPrice.setAttribute("class", "price");
         ddPrice.textContent = price+"€/jour";
 
-    dl.appendChild(dt);
-    dl.appendChild(ddLocalisation);
-    dl.appendChild(ddTagline);
     dl.appendChild(ddPrice);
 
     return dl;
     }
 
+    /* Format render (de vue) Réduit du profil*/
     function getUserCardDOMMini () {
+    
+        let dl = document.createElement( 'dl');
+            dl.setAttribute("aria-label","Description");
+        let dt = document.createElement( 'dt');
+            dt.textContent = name;
+        let ddLocalisation = document.createElement( 'dd');
+            ddLocalisation.textContent = city+", "+country;
+        let ddTagline = document.createElement( 'dd');
+            ddTagline.textContent = tagline;
 
-        let article = document.createElement( 'article' );
-        let h2 = document.createElement( 'h2' );
-            h2.textContent = name;
-            h2.setAttribute("class","hidden");
-            h2.setAttribute("aria-hidden","true");
-        let dl = getUserDescriptionDOM();
+        dl.appendChild(dt);
+        dl.appendChild(ddLocalisation);
+        dl.appendChild(ddTagline);
+        
+        return dl;
+    }
 
-        article.appendChild(h2);
-        article.appendChild(dl);
+    function getUserThumbnail () {
+       let img = document.createElement( 'img' );
+           img.setAttribute("src", picture);
+           img.setAttribute("alt","Portrait "+name);
 
-        return article;
+    return img;
     }
 
     function getUserCardDOM() {
-        const article = document.createElement( 'article' );
         const ahref = document.createElement( 'a');
             ahref.setAttribute("href","photographer.html?id="+id);
             ahref.setAttribute("title","lien vers page "+name);
-        const img = document.createElement( 'img' );
-           img.setAttribute("src", picture);
-           img.setAttribute("alt","Portrait "+name);
+        const article = document.createElement( 'article' );
+        const img = getUserThumbnail();
         const h2 = document.createElement( 'h2' );
             h2.textContent = name;
             h2.setAttribute("class","hidden");
@@ -67,5 +67,5 @@ export function photographerFactory(data) {
         return ahref;
     }
 
-    return { name, picture, getUserCardDOM, getUserDescriptionDOM, getUserCardDOMMini }
+    return { name, picture, getUserCardDOM, getUserDescriptionDOM, getUserCardDOMMini, getUserThumbnail }
 }

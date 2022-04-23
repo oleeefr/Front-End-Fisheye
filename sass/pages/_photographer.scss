@@ -1,3 +1,5 @@
+/* Page Photogrqpher */
+
 #contact_modal {
     display: none;
 }
@@ -6,6 +8,46 @@
     background-color: #FAFAFA;
     height: 300px;
     margin: 0 100px;
+    display: flex;
+    justify-content: space-around;
+
+    article {
+        justify-self: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        
+        dl {
+            line-height: 43px;
+
+            dt {
+                color: #D3573C;
+                font-size: 57px;
+            }
+            dd {
+                margin-inline-start: 0px;
+                font-size: 18px; 
+            }
+            dd:nth-child(2) { 
+                color: #901C1C;
+                font-size: 25px;
+            }
+        }
+    }
+
+    .blockFormulaire {
+        display: flex;
+        align-items: center;
+        margin: 40px;
+    }
+    .blockPortrait {
+        display: flex;
+        align-items: center;
+        margin: 40px;
+
+        @include thumbnails;
+    }
 }
 
 .contact_button {
@@ -55,7 +97,7 @@ form {
     align-items: flex-start;
 }
 
-/* Page Photogrqpher */
+
 
 form label {
     color: #312E2E;

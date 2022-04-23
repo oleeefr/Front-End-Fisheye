@@ -51,7 +51,7 @@ h1 {
   color: #D3573C;
   font-size: 36px;
 }
-.photographer_section a article dl .price {
+.photographer_section a article dl dd:nth-child(4) {
   color: gray;
 }
 .photographer_section a article img {
@@ -61,6 +61,7 @@ h1 {
   object-fit: cover;
 }
 
+/* Page Photogrqpher */
 #contact_modal {
   display: none;
 }
@@ -69,6 +70,46 @@ h1 {
   background-color: #FAFAFA;
   height: 300px;
   margin: 0 100px;
+  display: flex;
+  justify-content: space-around;
+}
+.photograph-header article {
+  justify-self: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.photograph-header article dl {
+  line-height: 43px;
+}
+.photograph-header article dl dt {
+  color: #D3573C;
+  font-size: 57px;
+}
+.photograph-header article dl dd {
+  margin-inline-start: 0px;
+  font-size: 18px;
+}
+.photograph-header article dl dd:nth-child(2) {
+  color: #901C1C;
+  font-size: 25px;
+}
+.photograph-header .blockFormulaire {
+  display: flex;
+  align-items: center;
+  margin: 40px;
+}
+.photograph-header .blockPortrait {
+  display: flex;
+  align-items: center;
+  margin: 40px;
+}
+.photograph-header .blockPortrait img {
+  height: 200px;
+  width: 200px;
+  border-radius: 106px;
+  object-fit: cover;
 }
 
 .contact_button {
@@ -118,7 +159,6 @@ form {
   align-items: flex-start;
 }
 
-/* Page Photogrqpher */
 form label {
   color: #312E2E;
   font-size: 36px;

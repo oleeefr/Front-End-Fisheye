@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <link href="css/style.css" rel="stylesheet" type="text/css" />
+    <link href="css/styles.css" rel="stylesheet" type="text/css" />
     <meta charset="utf-8">
     <link rel="icon" type="image/png" href="assets/favicon.png">
     <link href="https://fonts.googleapis.com/css?family=DM+Sans&display=swap" rel="stylesheet">
@@ -9,11 +9,18 @@
   </head>
   <body>
     <header>
-      <img src="assets/images/logo.png" class="logo" alt ="logo"/>
+      <a href="/" title="logo - page d'accueil"><img src="assets/images/logo.png" class="logo" alt="logo Fisheye"/></a>
     </header>
     <main id="main">
       <div class="photograph-header">
-        <button class="contact_button" onclick="displayModal()">Contactez-moi</button>
+        <!-- structure html article photogrpahe -->
+        <article>
+        </article>
+        <div class="blockFormulaire">
+          <button class="contact_button" onclick="displayModal()">Contactez-moi</button>
+        </div>
+        <article class="blockPortrait">
+        </article>
       </div>
     </main>
     <div id="contact_modal">
@@ -31,7 +38,7 @@
 				</form>
 			</div>
 		</div>
-    <script src="/scripts/utils/contactForm.js"></script>
+    <!-- <script src="/scripts/utils/contactForm.js"></script> -->
     <script type="module" src="scripts/main/script.js"></script>
   </body>
 </html>
