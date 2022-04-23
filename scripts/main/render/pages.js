@@ -34,6 +34,8 @@ export async function index () {
     //console.log(thumbnailPhotograph);
     let img = moduleHtmlPhotographer.getUserThumbnail();
     thumbnailPhotograph.appendChild(img);
+
+    console.log(pageModuleData.listMediaByPhotograph);
  }
  
  // fonction de render (de Vue) pour afficher une page 404..
