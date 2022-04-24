@@ -64,17 +64,26 @@
 }
 
 .modal {
+    position: fixed;
+    z-index: 1;
     border-radius: 5px;
     background-color: #DB8876;
-    width: 50%;
+    width: 36%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
     padding: 35px;
     margin: auto;
+    top: 201px;
+    left: 547px;
+
 }
 
+.close_bouton {
+    background-color: transparent;
+    border: none;
+}
 .modal header {
     justify-content: space-between;
     width: 100%;
@@ -85,7 +94,7 @@
 }
 
 .modal header h2 {
-    font-size: 64px;
+    font-size: 38px;
     font-weight: normal;
     text-align: center;
 }
@@ -112,9 +121,15 @@ form div {
     margin-bottom: 26px;
 }
 
+.message {
+    font-size: 55px;
+    resize : none;
+}
+
 form input {
     width: 100%;
     height: 68px;
     border: none;
     border-radius: 5px;
+    font-size: 50px;
 }

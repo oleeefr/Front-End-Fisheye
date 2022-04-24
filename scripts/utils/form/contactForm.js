@@ -10,3 +10,5 @@ export function closeModal() {
 }
 
 export const modalBtn = document.querySelector(".contact_button");
+
+export const closeBtn = document.querySelector(".close_bouton");

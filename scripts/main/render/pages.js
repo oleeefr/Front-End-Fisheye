@@ -50,8 +50,8 @@ form.onsubmit = (e) => {
     // launch modal event
     pageModalForm.modalBtn.addEventListener("click", pageModalForm.displayModal);
 
-    // close modal evant
-    // pageModalForm.modalBtn.addEventListener("click", pageModalForm.displayModal);
+    // close modal event
+    pageModalForm.closeBtn.addEventListener("click", pageModalForm.closeModal);
 
     console.log(pageModuleData.listMediaByPhotograph);
  }
