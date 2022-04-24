@@ -13,12 +13,14 @@ export async function index () {
  
  // fonction de render (de Vue) pour afficher la page Portrait Photographe
  export async function photographer () {
+
      let pageModuleData = await import ('../requests/getAllMediaByIdPhotographer.js');
      let pageModuleRenderPhotographer = await import(___PATH+"photographer.js");
+     let pageModalForm = await import ('../../utils/form/contactForm.js');
 
      // console.log (pageModuleData.photograph);
      let moduleHtmlPhotographer = pageModuleRenderPhotographer.photographerFactory(pageModuleData.photograph);
-    console.log(moduleHtmlPhotographer);
+    // console.log(moduleHtmlPhotographer);
 
     let articlePhotographDescription = document.querySelector('.photograph-header article');
      // console.log(articlePhotographDescription);
@@ -34,6 +36,22 @@ export async function index () {
     //console.log(thumbnailPhotograph);
     let img = moduleHtmlPhotographer.getUserThumbnail();
     thumbnailPhotograph.appendChild(img);
+
+// lancement de la validation du formulaire
+/*
+form.onsubmit = (e) => {
+  e.preventDefault();
+  if(validFields()) {
+    reinitialisationFormulaire();
+    form.style.display = "none";
+    modalMessageConfirm.style.display = "grid";
+  };
+}*/
+    // launch modal event
+    pageModalForm.modalBtn.addEventListener("click", pageModalForm.displayModal);
+
+    // close modal evant
+    // pageModalForm.modalBtn.addEventListener("click", pageModalForm.displayModal);
 
     console.log(pageModuleData.listMediaByPhotograph);
  }
