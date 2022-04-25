@@ -1,10 +1,11 @@
 
-
+//// Fonction permettant d'ouvrir la modale du fomulaire de contact
 export function displayModal() {
     const modal = document.getElementById("contact_modal");
 	modal.style.display = "block";
 }
 
+//// Fonction permettant de fermer la modale du fomulaire de contact
 export function closeModal() {
     const modal = document.getElementById("contact_modal");
     let formulaire = document.querySelector("form[name=form]");
@@ -12,6 +13,7 @@ export function closeModal() {
     modal.style.display = "none";
 }
 
+//// Fonction permettant transmettre le resultat de la saisie du formulaire Validée
 export function renderLog() {
     let nameField = document.querySelector("input[name=nom]").value;
     let emailField = document.querySelector("input[name=email]").value;

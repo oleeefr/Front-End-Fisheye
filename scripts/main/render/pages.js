@@ -1,6 +1,6 @@
 let ___PATH = '../../lib/render/';
 
-// fonction de render (de Vue) pour afficher la page d'accueil
+//// fonction de render (de Vue) pour afficher la page d'accueil
 export async function index () {
 
     // importation de la liste des photographes
@@ -11,7 +11,7 @@ export async function index () {
     pageModuleRender.displayData(photographers);
  }
  
- // fonction de render (de Vue) pour afficher la page Portrait Photographe
+ //// fonction de render (de Vue) pour afficher la page Portrait Photographe
  export async function photographer () {
 
      let pageModuleData = await import ('../requests/getAllMediaByIdPhotographer.js');
@@ -19,37 +19,34 @@ export async function index () {
      let pageModalForm = await import ('../../utils/form/contactForm.js');
      let moduleLikesAndPrice = await import (___PATH+"ticket.js");
 
-     // console.log (pageModuleData.photograph);
      let moduleHtmlPhotographer = pageModuleRenderPhotographer.photographerFactory(pageModuleData.photograph);
-    // console.log(moduleHtmlPhotographer);
 
-    let articlePhotographDescription = document.querySelector('.photograph-header article');
-     // console.log(articlePhotographDescription);
+     // Affichage du Profil du photographe selectionné
+     let articlePhotographDescription = document.querySelector('.photograph-header article');
      let h2 = document.createElement( 'h2');
          h2.setAttribute('class','hidden');
         h2.innerText = moduleHtmlPhotographer.name;
      let dl = moduleHtmlPhotographer.getUserCardDOMMini();
-
     articlePhotographDescription.appendChild(h2);
     articlePhotographDescription.appendChild(dl);
 
+    // Affichage la vignette photo du photographe selectionnée
     let thumbnailPhotograph = document.querySelector('.photograph-header article.blockPortrait');
-    //console.log(thumbnailPhotograph);
     let img = moduleHtmlPhotographer.getUserThumbnail();
     thumbnailPhotograph.appendChild(img);
 
-    // launch modal event
+    // launch modal formulaire event
     pageModalForm.modalBtn.addEventListener("click", pageModalForm.displayModal);
 
-    // close modal event
+    // close modal formulaire event
     pageModalForm.closeBtn.addEventListener("click", pageModalForm.closeModal);
 
-    // ticket Likes and Price
+    // Affichage du ticket Likes and Price du photographe
     let price = moduleHtmlPhotographer.price;
-    moduleLikesAndPrice.ticketLikesAndPrice().setLikes (40);
+    moduleLikesAndPrice.ticketLikesAndPrice().setLikes ("*40*"); // valeur ficitve
     moduleLikesAndPrice.ticketLikesAndPrice().setPrice (price);
 
-    // traitement du formulaire
+    // traitement de la validation du formulaire
     let formulaire = document.querySelector("form[name=form]");
     formulaire.onsubmit = (e) => {
       e.preventDefault();
@@ -57,11 +54,12 @@ export async function index () {
       formulaire.reset();
       pageModalForm.closeModal();
       };
-      
+
+      // remonté des données médias du photographe selectionné
     console.log(pageModuleData.listMediaByPhotograph);
  }
  
- // fonction de render (de Vue) pour afficher une page 404..
+ //// fonction de render (de Vue) pour afficher une page 404..
  export async function notFound404 () {
      console.log("erreur 404...");
  }
