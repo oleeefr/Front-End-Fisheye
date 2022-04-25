@@ -76,7 +76,7 @@
     padding: 35px;
     margin: auto;
     top: 201px;
-    left: 547px;
+    left:30%;
 
 }
 
@@ -122,8 +122,9 @@ form div {
 }
 
 .message {
-    font-size: 55px;
+    font-size: 35px;
     resize : none;
+    width: 100%;
 }
 
 form input {
@@ -132,4 +133,20 @@ form input {
     border: none;
     border-radius: 5px;
     font-size: 50px;
+}
+
+#ticket {
+    align-items: center;
+    background: #db8876;
+    border-radius: 0.3125rem;
+    bottom: 0;
+    display: flex;
+    font-size: 1.2em;
+    font-weight: 500;
+    height: 4.375rem;
+    justify-content: space-between;
+    padding: 0 2.1875rem;
+    position: fixed;
+    right: 2.5rem;
+    width: 18rem;
 }
