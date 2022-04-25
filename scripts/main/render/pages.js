@@ -38,18 +38,6 @@ export async function index () {
     let img = moduleHtmlPhotographer.getUserThumbnail();
     thumbnailPhotograph.appendChild(img);
 
-
-
-// lancement de la validation du formulaire
-/*
-form.onsubmit = (e) => {
-  e.preventDefault();
-  if(validFields()) {
-    reinitialisationFormulaire();
-    form.style.display = "none";
-    modalMessageConfirm.style.display = "grid";
-  };
-}*/
     // launch modal event
     pageModalForm.modalBtn.addEventListener("click", pageModalForm.displayModal);
 
@@ -61,6 +49,15 @@ form.onsubmit = (e) => {
     moduleLikesAndPrice.ticketLikesAndPrice().setLikes (40);
     moduleLikesAndPrice.ticketLikesAndPrice().setPrice (price);
 
+    // traitement du formulaire
+    let formulaire = document.querySelector("form[name=form]");
+    formulaire.onsubmit = (e) => {
+      e.preventDefault();
+      pageModalForm.renderLog();
+      formulaire.reset();
+      pageModalForm.closeModal();
+      };
+      
     console.log(pageModuleData.listMediaByPhotograph);
  }
  
