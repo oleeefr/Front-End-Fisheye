@@ -23,16 +23,16 @@ export async function index () {
 
      // Affichage du Profil du photographe selectionné
      let articlePhotographDescription = document.querySelector('.photograph-header article');
-     let h2 = document.createElement( 'h2');
-         h2.setAttribute('class','hidden');
-        h2.innerText = moduleHtmlPhotographer.name;
      let dl = moduleHtmlPhotographer.getUserCardDOMMini();
-    articlePhotographDescription.appendChild(h2);
-    articlePhotographDescription.appendChild(dl);
-
+     articlePhotographDescription.appendChild(dl);
+    
     // Affichage la vignette photo du photographe selectionnée
     let thumbnailPhotograph = document.querySelector('.photograph-header article.blockPortrait');
     let img = moduleHtmlPhotographer.getUserThumbnail();
+    let h2 = document.createElement( 'h2');
+    h2.setAttribute('class','hidden');
+    h2.innerText = moduleHtmlPhotographer.name;
+    thumbnailPhotograph.appendChild(h2);
     thumbnailPhotograph.appendChild(img);
 
     // launch modal formulaire event
@@ -41,11 +41,8 @@ export async function index () {
     // close modal formulaire event
     pageModalForm.closeBtn.addEventListener("click", pageModalForm.closeModal);
 
-    // Affichage du ticket Likes and Price du photographe
-    let price = moduleHtmlPhotographer.price;
-    moduleLikesAndPrice.ticketLikesAndPrice().setLikes ("*40*"); // valeur ficitve
-    moduleLikesAndPrice.ticketLikesAndPrice().setPrice (price);
-
+    pageModalForm.renderTitleForm(moduleHtmlPhotographer.name);
+    
     // traitement de la validation du formulaire
     let formulaire = document.querySelector("form[name=form]");
     formulaire.onsubmit = (e) => {
@@ -54,6 +51,12 @@ export async function index () {
       formulaire.reset();
       pageModalForm.closeModal();
       };
+
+
+    // Affichage du ticket Likes and Price du photographe
+    let price = moduleHtmlPhotographer.price;
+    moduleLikesAndPrice.ticketLikesAndPrice().setLikes ("*40*"); // valeur fictive
+    moduleLikesAndPrice.ticketLikesAndPrice().setPrice (price);
 
       // remonté des données médias du photographe selectionné
     console.log(pageModuleData.listMediaByPhotograph);

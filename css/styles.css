@@ -127,6 +127,7 @@ h1 {
 
 .modal {
   position: fixed;
+  box-shadow: -2px 3px 20px gray;
   z-index: 1;
   border-radius: 5px;
   background-color: #DB8876;
@@ -158,7 +159,6 @@ h1 {
 .modal header h2 {
   font-size: 38px;
   font-weight: normal;
-  text-align: center;
 }
 
 form {

@@ -1,47 +1,48 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
   <head>
     <link href="css/styles.css" rel="stylesheet" type="text/css" />
     <meta charset="utf-8">
     <link rel="icon" type="image/png" href="assets/favicon.png">
     <link href="https://fonts.googleapis.com/css?family=DM+Sans&display=swap" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/ed0721a499.js" crossorigin="anonymous"></script>
-    <title>Fisheye - Plateforme de photographe indépendant</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css"
+    integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
+    <title>Fisheye</title>
   </head>
   <body>
     <header>
       <a href="/" title="logo - page d'accueil"><img src="assets/images/logo.png" class="logo" alt="logo Fisheye"/></a>
     </header>
-    <main id="main">
+    <main id="main" aria-hidden="false">
       <div class="photograph-header">
-        <!-- structure html article photogrpahe -->
         <article>
+          <h2 class="hidden">Profil</h2>
         </article>
         <div class="blockFormulaire">
-          <button class="contact_button">Contactez-moi</button>
+          <button class="contact_button" aria-label="ouvrir Formulaire">Contactez-moi</button>
         </div>
         <article class="blockPortrait">
         </article>
       </div>
-      <div id="ticket" aria-label="photographer likes and price">
+      <div id="ticket" aria-label="photographe likes and price">
         <span id="total-likes">***</span>
         <i class="fas fa-heart" aria-label="likes"></i>
       </div>
     </main>
-    <div id="contact_modal">
+    <div id="contact_modal" aria-hidden="true" role="dialog">
 			<div class="modal">
 				<header>
-          <h2>Contactez-moi</h2>
-          <button class="close_bouton"><img src="assets/icons/close.svg"/></button>
+          <h2>Contactez-moi<br /></h2>
+          <button class="close_bouton"><img src="assets/icons/close.svg" alt="fermer"/></button>
         </header>
 				<form name="form" action="photographer.html" method="GET">
 					<div>
             <label for="nom">Nom :</label>
-						<input type="text" name="nom" required/>
+						<input type="text" name="nom" id="nom" required/>
 						<label for="email">Courriel :</label>
-						<input type="email" name="email" required/>
+						<input type="email" name="email" id="email" required/>
             <label for="message">Message :</label>
-            <textarea class="message" name="message" rows="3" required></textarea>
+            <textarea class="message" name="message" id="message" rows="3" required></textarea>
 					</div>
           <button class="contact_button">Envoyer</button>
 				</form>

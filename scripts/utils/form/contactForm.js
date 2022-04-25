@@ -1,16 +1,27 @@
 
+const modal = document.getElementById("contact_modal");
+
 //// Fonction permettant d'ouvrir la modale du fomulaire de contact
 export function displayModal() {
-    const modal = document.getElementById("contact_modal");
+    let main = document.querySelector('#main');
+        main.setAttribute('aria-hidden', 'true');
+        modal.setAttribute('aria-hidden','false');
 	modal.style.display = "block";
 }
 
 //// Fonction permettant de fermer la modale du fomulaire de contact
 export function closeModal() {
-    const modal = document.getElementById("contact_modal");
+    let main = document.querySelector('#main');
+        main.setAttribute('aria-hidden', 'false');
+        modal.setAttribute('aria-hidden','true');
     let formulaire = document.querySelector("form[name=form]");
     formulaire.reset ();
     modal.style.display = "none";
+}
+
+export function renderTitleForm (name) {
+    let title = modal.querySelector('h2');
+        title.innerHTML= "Contactez-moi<br />"+name;
 }
 
 //// Fonction permettant transmettre le resultat de la saisie du formulaire Validée
