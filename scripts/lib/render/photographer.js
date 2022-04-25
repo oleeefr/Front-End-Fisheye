@@ -7,17 +7,15 @@ export function photographerFactory(data) {
     const picture = (portrait ==null || 
                      portrait.trim().length == 0)? no_image: routes.__DIRNAME_PHOTOGRAPHER_PORTRAIT()+portrait;
     
-
     /* format render (de vue) détaillé du profil */
     function getUserDescriptionDOM () {
         
-    let dl = getUserCardDOMMini();
-    const ddPrice = document.createElement( 'dd');
-        ddPrice.textContent = price+"€/jour";
+        let dl = getUserCardDOMMini();
+        const ddPrice = document.createElement( 'dd');
+            ddPrice.textContent = price+"€/jour";
 
-    dl.appendChild(ddPrice);
-
-    return dl;
+        dl.appendChild(ddPrice);
+        return dl;
     }
 
     /* Format render (de vue) Réduit du profil*/
@@ -35,15 +33,14 @@ export function photographerFactory(data) {
         dl.appendChild(dt);
         dl.appendChild(ddLocalisation);
         dl.appendChild(ddTagline);
-        
         return dl;
     }
 
     function getUserThumbnail () {
+        
        let img = document.createElement( 'img' );
            img.setAttribute("src", picture);
            img.setAttribute("alt","Portrait "+name);
-
     return img;
     }
 
@@ -63,9 +60,8 @@ export function photographerFactory(data) {
         article.appendChild(h2);
         article.appendChild(dl);
         ahref.appendChild(article);
-
         return ahref;
     }
 
-    return { name, picture, getUserCardDOM, getUserDescriptionDOM, getUserCardDOMMini, getUserThumbnail }
+    return { name, price, getUserCardDOM, getUserDescriptionDOM, getUserCardDOMMini, getUserThumbnail }
 }

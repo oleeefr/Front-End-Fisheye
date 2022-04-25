@@ -17,6 +17,7 @@ export async function index () {
      let pageModuleData = await import ('../requests/getAllMediaByIdPhotographer.js');
      let pageModuleRenderPhotographer = await import(___PATH+"photographer.js");
      let pageModalForm = await import ('../../utils/form/contactForm.js');
+     let moduleLikesAndPrice = await import (___PATH+"ticket.js");
 
      // console.log (pageModuleData.photograph);
      let moduleHtmlPhotographer = pageModuleRenderPhotographer.photographerFactory(pageModuleData.photograph);
@@ -37,6 +38,8 @@ export async function index () {
     let img = moduleHtmlPhotographer.getUserThumbnail();
     thumbnailPhotograph.appendChild(img);
 
+
+
 // lancement de la validation du formulaire
 /*
 form.onsubmit = (e) => {
@@ -52,6 +55,11 @@ form.onsubmit = (e) => {
 
     // close modal event
     pageModalForm.closeBtn.addEventListener("click", pageModalForm.closeModal);
+
+    // ticket Likes and Price
+    let price = moduleHtmlPhotographer.price;
+    moduleLikesAndPrice.ticketLikesAndPrice().setLikes (40);
+    moduleLikesAndPrice.ticketLikesAndPrice().setPrice (price);
 
     console.log(pageModuleData.listMediaByPhotograph);
  }

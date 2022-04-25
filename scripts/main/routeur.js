@@ -1,7 +1,7 @@
 // importation des fonctions de render des pages
 import {index, photographer, notFound404} from './render/pages.js';
 
-export async function controleur (page) {
+export async function routeur (page) {
 
     switch (page) {
         case "" :
