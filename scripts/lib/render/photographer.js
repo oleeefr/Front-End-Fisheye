@@ -67,5 +67,5 @@ export function photographerFactory(data) {
         return ahref;
     }
 
-    return { name, picture, getUserCardDOM, getUserDescriptionDOM, getUserCardDOMMini, getUserThumbnail }
+    return { name, picture, price, getUserCardDOM, getUserDescriptionDOM, getUserCardDOMMini, getUserThumbnail }
 }

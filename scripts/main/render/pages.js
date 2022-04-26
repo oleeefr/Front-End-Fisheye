@@ -11,14 +11,14 @@ export async function index () {
  // fonction de render (de Vue) pour afficher la page Portrait Photographe
  export async function photographer () {
 
-     let render = await import ('../controller/photographer.js');
-     let renderForm = await import ('../../utils/form/contactForm.js');
+    let render = await import ('../controller/photographer.js');
+    let renderForm = await import ('../../utils/form/contactForm.js');
 
     let articlePhotographDescription = document.querySelector('.photograph-header article');
-     let h2 = document.createElement( 'h2');
-         h2.setAttribute('class','hidden');
-         h2.innerText = render.photographersHtml.name;
-     let dl = render.photographersHtml.getUserCardDOMMini();
+    let h2 = document.createElement( 'h2');
+        h2.setAttribute('class','hidden');
+        h2.innerText = render.photographersHtml.name;
+    let dl = render.photographersHtml.getUserCardDOMMini();
 
     articlePhotographDescription.appendChild(h2);
     articlePhotographDescription.appendChild(dl);
@@ -32,6 +32,9 @@ export async function index () {
 
     // close modal event
     renderForm.closeBtn.addEventListener("click", renderForm.closeModal);
+
+    // ticket like et price
+    render.ticketHtml();
  }
  
  // fonction de render (de Vue) pour afficher une page 404..
