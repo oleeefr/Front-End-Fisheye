@@ -3,51 +3,35 @@ let ___PATH = '../../lib/render/';
 // fonction de render (de Vue) pour afficher la page d'accueil
 export async function index () {
 
-    // importation de la liste des photographes
-    let pageModuleData = await import ('../requests/getAllPhotographers.js');
-    let photographers = pageModuleData.photographers;
+    let htmlRender = await import ('../controller/index.js');
 
-    let pageModuleRender = await import(___PATH+"listPhotographers.js");
-    pageModuleRender.displayData(photographers);
+    htmlRender.photographers();
  }
  
  // fonction de render (de Vue) pour afficher la page Portrait Photographe
  export async function photographer () {
 
-     let htmlPhotographer = await import ('../controller/photographer.js');
-     let pageModalForm = await import ('../../utils/form/contactForm.js');
+     let htmlRender = await import ('../controller/photographer.js');
+     let htmlRenderForm = await import ('../../utils/form/contactForm.js');
 
     let articlePhotographDescription = document.querySelector('.photograph-header article');
      let h2 = document.createElement( 'h2');
          h2.setAttribute('class','hidden');
-         h2.innerText = htmlPhotographer.moduleHtmlPhotographer.name;
-     let dl = htmlPhotographer.getUserCardDOMMini();
+         h2.innerText = htmlRender.modulePhotographer.name;
+     let dl = htmlRender.modulePhotographer.getUserCardDOMMini();
 
     articlePhotographDescription.appendChild(h2);
     articlePhotographDescription.appendChild(dl);
 
     let thumbnailPhotograph = document.querySelector('.photograph-header article.blockPortrait');
-    //console.log(thumbnailPhotograph);
-    let img = htmlPhotographer.moduleHtmlPhotographer.getUserThumbnail();
+    let img = htmlRender.modulePhotographer.getUserThumbnail();
     thumbnailPhotograph.appendChild(img);
-
-// lancement de la validation du formulaire
-/*
-form.onsubmit = (e) => {
-  e.preventDefault();
-  if(validFields()) {
-    reinitialisationFormulaire();
-    form.style.display = "none";
-    modalMessageConfirm.style.display = "grid";
-  };
-}*/
+    
     // launch modal event
-    pageModalForm.modalBtn.addEventListener("click", pageModalForm.displayModal);
+    htmlRenderForm.modalBtn.addEventListener("click", pageModalForm.displayModal);
 
     // close modal event
-    pageModalForm.closeBtn.addEventListener("click", pageModalForm.closeModal);
-
-    console.log(pageModuleData.listMediaByPhotograph);
+    htmlRenderForm.closeBtn.addEventListener("click", pageModalForm.closeModal);
  }
  
  // fonction de render (de Vue) pour afficher une page 404..
