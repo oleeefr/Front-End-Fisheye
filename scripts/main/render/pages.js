@@ -42,7 +42,7 @@ export async function index () {
     pageModalForm.closeBtn.addEventListener("click", pageModalForm.closeModal);
 
     pageModalForm.renderTitleForm(moduleHtmlPhotographer.name);
-    
+
     // traitement de la validation du formulaire
     let formulaire = document.querySelector("form[name=form]");
     formulaire.onsubmit = (e) => {
@@ -50,8 +50,7 @@ export async function index () {
       pageModalForm.renderLog();
       formulaire.reset();
       pageModalForm.closeModal();
-      };
-
+    };
 
     // Affichage du ticket Likes and Price du photographe
     let price = moduleHtmlPhotographer.price;

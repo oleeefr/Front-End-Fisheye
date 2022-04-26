@@ -22,8 +22,9 @@ export function photographerFactory(data) {
     function getUserCardDOMMini () {
     
         let dl = document.createElement( 'dl');
-            dl.setAttribute("aria-label","Description");
+            dl.setAttribute("aria-label","Renseignements");
         let dt = document.createElement( 'dt');
+            dt.setAttribute("aria-label","Nom");
             dt.textContent = name;
         let ddLocalisation = document.createElement( 'dd');
             ddLocalisation.textContent = city+", "+country;
@@ -47,7 +48,7 @@ export function photographerFactory(data) {
     function getUserCardDOM() {
         const ahref = document.createElement( 'a');
             ahref.setAttribute("href","photographer.html?id="+id);
-            ahref.setAttribute("title","lien vers page "+name);
+            ahref.setAttribute("title","vers page "+name);
         const article = document.createElement( 'article' );
         const img = getUserThumbnail();
         const h2 = document.createElement( 'h2' );
@@ -55,12 +56,18 @@ export function photographerFactory(data) {
             h2.setAttribute("class","hidden");
             h2.setAttribute("aria-hidden","true");
         const dl = getUserDescriptionDOM();
-
+        /*
         article.appendChild(img);
         article.appendChild(h2);
         article.appendChild(dl);
         ahref.appendChild(article);
-        return ahref;
+        return ahref;*/
+
+        ahref.appendChild(img);
+        article.appendChild(ahref);
+        article.appendChild(h2);
+        article.appendChild(dl);
+        return article;
     }
 
     return { name, price, getUserCardDOM, getUserDescriptionDOM, getUserCardDOMMini, getUserThumbnail }

@@ -34,30 +34,32 @@ h1 {
     gap: 70px;
     margin-top: 100px;
 
-    a {
-        cursor: pointer;
-        text-decoration: none;
-        color: black;
+   
 
-        article {
-            justify-self: center;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-            
-            dl {
-                text-align: center;
-                dt {
-                    color: #D3573C;
-                    font-size: 36px;
-                }
-                dd:nth-child(4) {
-                    color : gray;
-                }
-            }
-    
+    article {
+        justify-self: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+
+        a {
+            cursor: pointer;
+            text-decoration: none;
+            color: black;
+
             @include thumbnails;
+        }
+        
+        dl {
+            text-align: center;
+            dt {
+                color: #D3573C;
+                font-size: 36px;
+            }
+            dd:nth-child(4) {
+                color : gray;
+            }
         }
     }
 
