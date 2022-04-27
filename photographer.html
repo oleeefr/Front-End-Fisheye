@@ -24,9 +24,36 @@
         <article class="blockPortrait">
         </article>
       </div>
-      <div id="ticket" aria-label="photographe likes and price">
-        <span id="total-likes">***</span>
-        <i class="fas fa-heart" aria-label="likes"></i>
+      <div id="gallery-media" aria-hidden="false">
+        <div>
+          <label for="Trie">Trier par</label>
+          <select id ="Trie" aria-label="gallerie des medias">
+            <option value="titre" selected>Titre</option>
+            <option value="popularite">Popularité</option>
+            <option value="date">Date</option>
+          </select>
+        </div>
+        <section>
+          <h2>Galerie média</h2>
+          <div>
+              <article>
+                <a href="#" title="">
+                  <img src="/medias/Mimi/Animals_Rainbow.jpg" alt="description lien2"/>
+                </a>
+                <div class="textuel">
+                  <h2>image photos</h2> 
+                  <button>
+                    <strong>45</strong>
+                    <i class="fas fa-heart fa-2x" aria-label="likes - cliquez pour ajouter des likes"></i>
+                  </button>
+                </div>
+              </article>
+            </div>
+        </section>
+      </div>
+      <div id="ticket">
+        <span id="total-likes"></span>
+        <i class="fas fa-heart"></i>
       </div>
     </main>
     <div id="contact_modal" aria-hidden="true" role="dialog">

@@ -195,6 +195,71 @@ form input {
   font-size: 50px;
 }
 
+#gallery-media {
+  margin: 0 100px;
+  font-size: 20px;
+}
+#gallery-media div {
+  margin-top: 28px;
+}
+#gallery-media div label {
+  font-weight: bold;
+}
+#gallery-media div select {
+  box-shadow: inset 1px 1px 3px #ccc;
+  border-radius: 5px;
+  background: #901C1C;
+  color: white;
+  font-size: 20px;
+  margin-left: 10px;
+}
+#gallery-media section > h2 {
+  display: none;
+}
+#gallery-media section div {
+  margin-top: 40px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+#gallery-media section div article {
+  margin-left: 80px;
+  margin-bottom: 25px;
+  width: 300px;
+}
+#gallery-media section div article img {
+  height: 300px;
+  width: 300px;
+  object-fit: cover;
+  border-radius: 5px;
+}
+#gallery-media section div article .textuel {
+  display: flex;
+  justify-content: space-between;
+  color: #901c1c;
+  margin-top: 5px;
+}
+#gallery-media section div article .textuel button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  color: #901c1c;
+}
+#gallery-media section div article .textuel button strong {
+  padding-top: 15px;
+  position: relative;
+  font-size: 22px;
+}
+#gallery-media section div article .textuel h2 {
+  margin: 0.5rem 0;
+  padding-right: 0.5rem;
+  overflow: hidden;
+  text-align: left;
+  text-overflow: ellipsis;
+  font-weight: lighter;
+  white-space: nowrap;
+  font-size: 28px;
+}
+
 #ticket {
   align-items: center;
   background: #db8876;
