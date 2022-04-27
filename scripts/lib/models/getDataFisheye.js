@@ -5,7 +5,7 @@ const __PATH ='../../../';
 
 export async function getDataFisheye() {
   
-    let chemin = __PATH+routes.__DIRNAME_DATA();
+    let chemin = routes.__DIRNAME_DATA();
     let loadingData = await fetch (chemin)
         .then (
             function (response) { 
