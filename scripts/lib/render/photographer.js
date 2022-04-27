@@ -70,5 +70,5 @@ export function photographerFactory(data) {
         return article;
     }
 
-    return { name, price, getUserCardDOM, getUserDescriptionDOM, getUserCardDOMMini, getUserThumbnail }
+    return { name, picture, price, getUserCardDOM, getUserDescriptionDOM, getUserCardDOMMini, getUserThumbnail }
 }
