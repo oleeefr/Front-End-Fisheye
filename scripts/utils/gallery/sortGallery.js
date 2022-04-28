@@ -15,18 +15,24 @@ export function sortGallery (gallery) {
 
         switch (critere.toLowerCase()) {
 
-            case 'popularité':
+            case 'popularite':
                 galleryTrie = galery.sort(function (a,b) {
-                    return a.likes.value - b.likes.value;
+                    return a.likes - b.likes;
                 });
                 break
             
             case 'titre':
-            case 'date':
                 galleryTrie = galery.sort(function (a,b) {
                     return a.title.localeCompare(b.title);
                   });
                 break
+                case 'date':
+                  galleryTrie = galery.sort(function (a,b) {
+                    return new Date(b.date) - new Date(a.date);
+                   });
+                break
+            default:
+                console.log("critère de trie undefined..");
         }
         return galleryTrie;
     }

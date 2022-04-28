@@ -38,8 +38,8 @@ export async function index () {
 
     // Chargement de la galerie par defaut ou/et s'il changement de critère
     // au niveau du trie
-    let trieSelectBtn = document.querySelector('#trie');
-    //trieSelectBtn.addEventListener("change", render.galleryHtml);
+    let trieSelectBtn = document.querySelector('#Trie');
+    trieSelectBtn.addEventListener("change", render.galleryHtml);
 
     render.galleryHtml();
  }

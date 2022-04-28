@@ -15,6 +15,9 @@ export const ticketHtml = function () {
 
 // Affichage de la galerie média
 let galerieSortBySelect = sortGallery(listMediaByPhotograph);
-export const galleryHtml = displayGallery(galerieSortBySelect.result);
+export const galleryHtml = function () {
+   galerieSortBySelect = sortGallery(listMediaByPhotograph);
+   return displayGallery(galerieSortBySelect.result);
+};
 
 console.log(galerieSortBySelect);

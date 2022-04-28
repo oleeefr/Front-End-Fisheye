@@ -72,23 +72,3 @@ export function mediaFactory (data) {
     }
     return factory;
 }
-
-/*
-<article>
-                <a href="#" title="Agrandir le media">
-                  <img src="/medias/Mimi/Animals_Rainbow.jpg" alt="Bel Oiseau sur une branche"/>
-                </a>
-                <div class="textuel">
-                  <h2>image photos</h2> 
-                  <button>
-                    <strong>45</strong>
-                    <i class="fas fa-heart fa-2x" aria-label="likes - cliquez pour ajouter des likes"></i>
-                  </button>
-                </div>
-              </article>
-
-              <video class="media__link__video" aria-label="Wooden Horse Sculpture, vue rapproché">
-                        <source src="imgs/photos/82/Art_Wooden_Horse_Sculpture.mp4" type="video/mp4">
-                    </video>
-
-*/
