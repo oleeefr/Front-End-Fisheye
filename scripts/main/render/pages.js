@@ -35,6 +35,13 @@ export async function index () {
 
     // ticket like et price
     render.ticketHtml();
+
+    // Chargement de la galerie par defaut ou/et s'il changement de critère
+    // au niveau du trie
+    let trieSelectBtn = document.querySelector('#trie');
+    trieSelectBtn.addEventListener("change", render.galleryHtml);
+
+    render.galleryHtml();
  }
  
  //// fonction de render (de Vue) pour afficher une page 404..
