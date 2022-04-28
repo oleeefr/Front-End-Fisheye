@@ -7,4 +7,5 @@ export class routes {
     // Chemin pour accèder au mini-portrait des photographes 
     static __DIRNAME_PHOTOGRAPHER_PORTRAIT () {return "medias/thumbnails/";}
 
+    static __DIRNAME_MEDIA () {return "medias/";}
 }

@@ -4,7 +4,11 @@
 export function sortGallery (gallery) {
 
     let selectTrieValue = document.querySelector("#Trie").value;
-    let result = trie (selectTrieValue, gallery);
+    let result = runTrie();
+
+    function runTrie () {
+        return trie (selectTrieValue, gallery);
+    }
 
     function trie (critere, galery) {
         let galleryTrie="";
@@ -26,5 +30,5 @@ export function sortGallery (gallery) {
         }
         return galleryTrie;
     }
-    return result;
+    return {result, runTrie}
 }

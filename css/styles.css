@@ -216,40 +216,50 @@ form input {
 #gallery-media section > h2 {
   display: none;
 }
-#gallery-media section div {
+#gallery-media section .wrapper {
   margin-top: 40px;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
 }
-#gallery-media section div article {
+#gallery-media section .wrapper article {
   margin-left: 80px;
   margin-bottom: 25px;
-  width: 300px;
+  width: 380px;
 }
-#gallery-media section div article img {
-  height: 300px;
-  width: 300px;
+#gallery-media section .wrapper article img {
+  height: 380px;
+  width: 380px;
   object-fit: cover;
   border-radius: 5px;
 }
-#gallery-media section div article .textuel {
+#gallery-media section .wrapper article .videoMedia {
+  display: block;
+  width: 380px;
+  height: 380px;
+  object-fit: cover;
+  border-radius: 5px;
+  background-color: #dedede;
+  overflow: hidden;
+}
+#gallery-media section .wrapper article .textuel {
   display: flex;
   justify-content: space-between;
   color: #901c1c;
   margin-top: 5px;
 }
-#gallery-media section div article .textuel button {
+#gallery-media section .wrapper article .textuel button {
   background-color: transparent;
   border: none;
   cursor: pointer;
   color: #901c1c;
 }
-#gallery-media section div article .textuel button strong {
+#gallery-media section .wrapper article .textuel button strong {
   padding-top: 15px;
   position: relative;
   font-size: 22px;
+  margin-right: 7px;
 }
-#gallery-media section div article .textuel h2 {
+#gallery-media section .wrapper article .textuel h2 {
   margin: 0.5rem 0;
   padding-right: 0.5rem;
   overflow: hidden;
@@ -257,7 +267,7 @@ form input {
   text-overflow: ellipsis;
   font-weight: lighter;
   white-space: nowrap;
-  font-size: 28px;
+  font-size: 17px;
 }
 
 #ticket {

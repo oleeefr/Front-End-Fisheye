@@ -2,6 +2,7 @@ import {photograph, listMediaByPhotograph} from '../requests/getAllMediaByIdPhot
 import {photographerFactory} from '../../lib/render/photographer.js';
 import {ticketLikesAndPrice} from '../../lib/render/ticket.js';
 import {sortGallery} from '../../utils/gallery/sortGallery.js';
+import {displayGallery} from '../../lib/render/gallerymedia.js';
 
 export const photographersHtml = photographerFactory(photograph);
 
@@ -14,5 +15,6 @@ export const ticketHtml = function () {
 
 // Affichage de la galerie média
 let galerieSortBySelect = sortGallery(listMediaByPhotograph);
+export const galleryHtml = displayGallery(galerieSortBySelect.result);
 
 console.log(galerieSortBySelect);
