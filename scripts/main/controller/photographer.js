@@ -19,5 +19,3 @@ export const galleryHtml = function () {
     galerieSortBySelect = sortGallery(listMediaByPhotograph);
    return displayGallery(galerieSortBySelect.result);
 };
-
-// console.log(galerieSortBySelect);

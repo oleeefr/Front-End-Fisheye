@@ -12,6 +12,11 @@ export function ticketLikesAndPrice () {
         divTicket.appendChild(domPrice);
     }
 
+    function getLike () {
+        let domLikes = document.querySelector("#total-likes");
+        return domLikes.value;
+    }
+
     return {
         setLikes,
         setPrice
