@@ -14,10 +14,10 @@ export const ticketHtml = function () {
 }
 
 // Affichage de la galerie média
-let galerieSortBySelect = sortGallery(listMediaByPhotograph);
+let galerieSortBySelect;
 export const galleryHtml = function () {
-   galerieSortBySelect = sortGallery(listMediaByPhotograph);
+    galerieSortBySelect = sortGallery(listMediaByPhotograph);
    return displayGallery(galerieSortBySelect.result);
 };
 
-console.log(galerieSortBySelect);
+// console.log(galerieSortBySelect);
