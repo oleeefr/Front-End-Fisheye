@@ -13,4 +13,19 @@ export function displayGallery (listMedia) {
     });
 
     ticketLikesAndPrice().setLikes(nbreTotaleLikes);
+
+    let likesBtn = document.querySelectorAll("article button");
+    console.log(likesBtn);
+    likesBtn.forEach((btn) =>{
+        btn.addEventListener('click', function () {updateButtonLike(btn)});
+    });
 }
+
+ // gestion des incrèmentations des likes des médias
+export function updateButtonLike (bouton) {
+    let numberUpdate = parseInt(bouton.querySelector('strong').textContent);
+    numberUpdate +=1;
+    bouton.querySelector('strong').textContent = numberUpdate;
+    bouton.disabled = true;
+}
+

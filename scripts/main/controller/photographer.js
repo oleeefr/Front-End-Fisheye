@@ -2,7 +2,7 @@ import {photograph, listMediaByPhotograph} from '../requests/getAllMediaByIdPhot
 import {photographerFactory} from '../../lib/render/photographer.js';
 import {ticketLikesAndPrice} from '../../lib/render/ticket.js';
 import {sortGallery} from '../../utils/gallery/sortGallery.js';
-import {displayGallery} from '../../lib/render/gallerymedia.js';
+import {displayGallery, updateButtonLike} from '../../lib/render/gallerymedia.js';
 
 export const photographersHtml = photographerFactory(photograph);
 
@@ -19,3 +19,6 @@ export const galleryHtml = function () {
     galerieSortBySelect = sortGallery(listMediaByPhotograph);
    return displayGallery(galerieSortBySelect.result);
 };
+
+// gestion du Click et Incrèmentation nbre de likes
+export const updateLikes = updateButtonLike;
