@@ -14,11 +14,12 @@ export function ticketLikesAndPrice () {
 
     function getLike () {
         let domLikes = document.querySelector("#total-likes");
-        return domLikes.value;
+        return domLikes.textContent;
     }
 
     return {
         setLikes,
-        setPrice
+        setPrice,
+        getLike
     }
 }

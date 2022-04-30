@@ -6,11 +6,10 @@ import {displayGallery, updateButtonLike} from '../../lib/render/gallerymedia.js
 
 export const photographersHtml = photographerFactory(photograph);
 
-// Affichage du ticket Likes and Price du photographe
+// Affichage du ticket Price du photographe
 export const ticketHtml = function () {
     let price = photographersHtml.price;
-    ticketLikesAndPrice().setLikes ("*40*"); // valeur fictive
-    ticketLikesAndPrice().setPrice (price);
+   ticketLikesAndPrice().setPrice (price);
 }
 
 // Affichage de la galerie média
