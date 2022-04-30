@@ -33,8 +33,16 @@ export async function index () {
     // close modal event
     renderForm.closeBtn.addEventListener("click", renderForm.closeModal);
 
-    // ticket like et price
-    render.ticketHtml();
+    // Chargement de la galerie par defaut ou/et s'il y a un changement de critère
+    // au niveau du trie
+    let trieSelectBtn = document.querySelector('#Trie');
+    trieSelectBtn.addEventListener("change", render.galleryHtml);
+
+    // Affichage de la Gallerie média du Phototraphe
+    render.galleryHtml();
+
+     // ticket price
+     render.ticketHtml();
  }
  
  //// fonction de render (de Vue) pour afficher une page 404..

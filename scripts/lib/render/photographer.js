@@ -56,12 +56,6 @@ export function photographerFactory(data) {
             h2.setAttribute("class","hidden");
             h2.setAttribute("aria-hidden","true");
         const dl = getUserDescriptionDOM();
-        /*
-        article.appendChild(img);
-        article.appendChild(h2);
-        article.appendChild(dl);
-        ahref.appendChild(article);
-        return ahref;*/
 
         ahref.appendChild(img);
         article.appendChild(ahref);

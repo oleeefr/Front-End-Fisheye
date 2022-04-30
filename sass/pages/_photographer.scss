@@ -135,6 +135,97 @@ form input {
     font-size: 50px;
 }
 
+#gallery-media {
+    $fontSizeDef :20px;
+    margin: 0 100px;
+    font-size: $fontSizeDef;
+
+    div {
+        margin-top: 28px;
+        
+        label {
+            font-weight: bold;
+        }
+        select {
+            box-shadow: inset 1px 1px 3px #ccc;
+            border-radius: 5px;
+            background: #901C1C;
+            color: white;
+            font-size: $fontSizeDef;
+            margin-left: 10px;
+        }
+    }
+
+    section {
+
+         > h2 {
+            display: none;
+        }
+        .wrapper {
+            margin-top: 40px;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+
+            article {
+                $dim : 380px;
+                margin-left: 80px;
+                margin-bottom: 25px;
+                width: $dim;
+                
+                img {
+                    height: $dim;
+                    width: $dim;
+                    object-fit: cover;
+                    border-radius: 5px;
+                }
+                .videoMedia {
+
+                    display: block;
+                    width: $dim;
+                    height: $dim;
+                    object-fit: cover;
+                    border-radius: 5px;
+                    background-color: #dedede;
+                    overflow: hidden;
+                }
+                
+                .textuel {
+                    display: flex;
+                    justify-content: space-between;
+                    color: #901c1c;
+                    margin-top: 5px;
+
+                   button {
+                    background-color: transparent;
+                    border: none;
+                    cursor: pointer;
+                    color: #901c1c;
+
+                    strong {
+                        padding-top: 15px;
+                        position: relative;
+                        font-size: 22px;
+                        margin-right: 7px;
+                     }
+                   }
+
+                    h2 {
+                        margin: 0.5rem 0;
+                        padding-right: 0.5rem;
+                        overflow: hidden;
+                        text-align: left;
+                        text-overflow: ellipsis;
+                        font-weight: lighter;
+                        white-space: nowrap;
+                        font-size: 17px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
 #ticket {
     align-items: center;
     background: #db8876;
