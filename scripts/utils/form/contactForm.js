@@ -6,8 +6,8 @@ export function displayModal() {
     let main = document.querySelector('#main');
         main.setAttribute('aria-hidden', 'true');
         modal.setAttribute('aria-hidden','false');
-    let firstFocusInput = document.querySelector("input");
-        firstFocusInput.focus();
+   // let firstFocusInput = document.querySelector("input");
+   //     firstFocusInput.focus();
 	modal.style.display = "block";
 }
 
@@ -37,6 +37,6 @@ export function renderLog() {
     console.log("Message : "+messageField);
 }
 
-export const modalBtn = document.querySelector(".contact_button");
+export const modalBtn = document.querySelector("#contact");
 export const closeBtn = document.querySelector(".close_bouton");
 

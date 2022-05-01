@@ -212,6 +212,10 @@ form input {
   color: white;
   font-size: 20px;
   margin-left: 10px;
+  height: 53px;
+}
+#gallery-media section {
+  margin-bottom: 100px;
 }
 #gallery-media section > h2 {
   display: none;
@@ -289,5 +293,95 @@ form input {
   left: 4.8rem;
   position: absolute;
 }
+
+.lightBox {
+  visibility: hidden;
+  position: fixed;
+  background: #FFFFFF;
+  width: 100%;
+  height: 100%;
+  inset: 0;
+  z-index: 3;
+  opacity: 0.97;
+  display: grid;
+  place-items: center;
+}
+.lightBox .close {
+  color: #901C1C;
+  background-color: transparent;
+  border: none;
+  position: absolute;
+  font-size: 2.5rem;
+  top: 0.25rem;
+  right: 1.1rem;
+  cursor: pointer;
+}
+.lightBox .left {
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  font-size: 3rem;
+  color: rgba(144, 28, 28, 0.9);
+  cursor: pointer;
+  background-color: transparent;
+  transition: all 0.2s ease-in;
+  border: none;
+  display: flex;
+}
+.lightBox .right {
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  font-size: 3rem;
+  color: rgba(144, 28, 28, 0.8);
+  cursor: pointer;
+  transition: all 0.2s ease-in;
+  border: none;
+  display: flex;
+  background-color: transparent;
+}
+.lightBox .container {
+  height: 80%;
+  width: 70%;
+}
+
+/*modal light box*/
+/*
+.lightbox {
+    display: none;
+    position: fixed;
+    z-index: 999999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(219,219,219,.7);
+
+    .lightbox-windows {
+        color: #901c1c;
+        width: 100%;
+        height: 100%;
+        position: relative;
+
+        .commandes {
+            top: 0px;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+
+            .left, .right {
+                position: absolute;
+                width: 60px;
+                height: 100px;
+                background-color: transparent;
+                border: none;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                cursor: pointer;
+            }
+        }
+    }
+} */
 
 /*# sourceMappingURL=styles.css.map */

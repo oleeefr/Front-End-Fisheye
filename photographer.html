@@ -13,16 +13,37 @@
     <header>
       <a href="/" title="logo - page d'accueil"><img lang="en" src="assets/images/logo.png" class="logo" alt="logo Fish eye"/></a>
     </header>
+    
+
     <main id="main" aria-hidden="false">
       <div class="photograph-header">
         <article>
           <h2 class="hidden">Profil</h2>
         </article>
         <div class="blockFormulaire">
-          <button class="contact_button" aria-label="Pour ouvrir Formulaire">Contactez-moi</button>
+          <button class="contact_button" id="contact" aria-label="Pour ouvrir Formulaire">Contactez-moi</button>
         </div>
         <article class="blockPortrait">
         </article>
+      </div>
+      <div id="contact_modal" aria-hidden="true" role="dialog">
+        <div class="modal">
+          <header>
+            <h2>Contactez-moi<br /></h2>
+            <button class="close_bouton" tabindex="0"><img src="assets/icons/close.svg" alt="fermer"/></button>
+          </header>
+          <form name="form" action="photographer.html" method="GET">
+            <div>
+              <label for="nom">Nom :</label>
+              <input type="text" name="nom" id="nom" required/>
+              <label for="email">Courriel :</label>
+              <input type="email" name="email" id="email" required/>
+              <label for="message">Message :</label>
+              <textarea class="message" name="message" id="message" rows="3" required></textarea>
+            </div>
+            <button class="contact_button">Envoyer</button>
+          </form>
+        </div>
       </div>
       <div id="gallery-media" aria-hidden="false">
         <div>
@@ -39,30 +60,43 @@
           </div>
         </section>
       </div>
+      <div class="lightBox" role="dialog" aria-label="lightbox modal">
+        <button class="close" aria-label="Fermer la fenêtre" tab>✕</button>
+        <button class="left navBtn" aria-label="média précédent">
+          <em class="fas fa-chevron-left"></em>
+        </button>
+        <div class="container"></div>
+        <button class="right navBtn" aria-label="media suivant">
+            <em class="fas fa-chevron-right"></em>
+        </div>
+       <!-- lightbox modale
+    <section class="lightbox" role="dialog" aria-label="lightbox modal">
+      <div class="lightbox-windows">
+          <ul class="container-slides"></ul>
+          <div class="commandes">
+              <button class="left" aria-label="média précédent">
+                  <em class="fas fa-chevron-left"></em>
+              </button>
+              <button class="right" aria-label="media suivant">
+                  <em class="fas fa-chevron-right"></em>
+              </button>
+              <button class="close" aria-label="fermer le carrousel">
+                  <em class="fas fa-times close-lightbox-media"></em>
+              </button>
+
+              <h2 class="titre-media-lightbox">Ici le titre du média</h2>
+          </div>
+      </div>-->
+    </main>
+    <footer>
       <div id="ticket">
         <span id="total-likes"></span>
-        <i class="fas fa-heart"></i>
+        <em class="fas fa-heart"></em>
       </div>
-    </main>
-    <div id="contact_modal" aria-hidden="true" role="dialog">
-			<div class="modal">
-				<header>
-          <h2>Contactez-moi<br /></h2>
-          <button class="close_bouton"><img src="assets/icons/close.svg" alt="fermer"/></button>
-        </header>
-				<form name="form" action="photographer.html" method="GET">
-					<div>
-            <label for="nom">Nom :</label>
-						<input type="text" name="nom" id="nom" required/>
-						<label for="email">Courriel :</label>
-						<input type="email" name="email" id="email" required/>
-            <label for="message">Message :</label>
-            <textarea class="message" name="message" id="message" rows="3" required></textarea>
-					</div>
-          <button class="contact_button">Envoyer</button>
-				</form>
-			</div>
-		</div>
+    </footer>
+      
+    
+    
     <script type="module" src="scripts/main/script.js"></script>
   </body>
 </html>

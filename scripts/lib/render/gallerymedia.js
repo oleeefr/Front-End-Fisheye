@@ -1,12 +1,13 @@
 import {mediaFactory} from './media.js';
 import {ticketLikesAndPrice} from './ticket.js';
+import {LightBoxFactory} from './lightBox.js';
 
-export function displayGallery (listMedia) {
+export function displayGallery (collectionMedia) {
     let gallerySection = document.querySelector("section .wrapper");
         gallerySection.innerHTML="";
     let nbreTotaleLikes =0;
 
-    listMedia.forEach(media => {
+    collectionMedia.forEach(media => {
         let mediaModelDom = mediaFactory(media);
         gallerySection.appendChild(mediaModelDom);
         nbreTotaleLikes += media.likes;
@@ -14,14 +15,15 @@ export function displayGallery (listMedia) {
 
     ticketLikesAndPrice().setLikes(nbreTotaleLikes);
     let likesBtn = document.querySelectorAll("article button");
-    console.log(likesBtn);
     likesBtn.forEach((btn) =>{
         btn.addEventListener('click', function () {updateButtonLike(btn)});
     });
+    LightBoxFactory(collectionMedia);
+    
 }
 
  // gestion des incrèmentations des likes des médias
-export function updateButtonLike (bouton) {
+function updateButtonLike (bouton) {
     let numberUpdate = parseInt(bouton.querySelector('strong').textContent);
     numberUpdate ++;
     bouton.querySelector('strong').textContent = numberUpdate;
@@ -30,4 +32,6 @@ export function updateButtonLike (bouton) {
     SommeLikes++;
     ticketLikesAndPrice().setLikes(SommeLikes);
 }
+
+
 

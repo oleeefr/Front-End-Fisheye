@@ -27,12 +27,7 @@ export async function index () {
     let img = render.photographersHtml.getUserThumbnail();
     thumbnailPhotograph.appendChild(img);
     
-    // launch modal event
-    renderForm.modalBtn.addEventListener("click", renderForm.displayModal);
-
-    // close modal event
-    renderForm.closeBtn.addEventListener("click", renderForm.closeModal);
-
+    
     // Chargement de la galerie par defaut ou/et s'il y a un changement de critère
     // au niveau du trie
     let trieSelectBtn = document.querySelector('#Trie');
@@ -43,6 +38,13 @@ export async function index () {
 
      // ticket price
      render.ticketHtml();
+
+     // launch modal event
+    renderForm.modalBtn.addEventListener("click", renderForm.displayModal);
+
+    // close modal event
+    renderForm.closeBtn.addEventListener("click", renderForm.closeModal);
+
  }
  
  //// fonction de render (de Vue) pour afficher une page 404..

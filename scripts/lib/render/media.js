@@ -30,8 +30,8 @@ export function mediaFactory (data) {
         let videotype = document.createElement('video');
             videotype.setAttribute('class','videoMedia');
             videotype.setAttribute('aria-label',title);
-        let source = document.createElement ('source');
         let lienMedia = routes.__DIRNAME_MEDIA()+photographerId+"/"+video;
+        let source = document.createElement ('source');
             source.setAttribute('src',lienMedia);
             source.setAttribute("type","video/mp4");
         videotype.appendChild(source);
@@ -52,9 +52,9 @@ export function mediaFactory (data) {
         let buttonLike = document.createElement('button');
         let nbreLikes = document.createElement('strong');
             nbreLikes.innerText =  likes;
-        let heartIcon = document.createElement('i');
+        let heartIcon = document.createElement('em');
             heartIcon.setAttribute('class','fas fa-heart fa-2x');
-            heartIcon.setAttribute('arai-label', 'likes - cliquez pour ajouter des likes');
+            heartIcon.setAttribute('aria-label', 'likes - cliquez pour ajouter des likes');
         
         buttonLike.appendChild(nbreLikes);
         buttonLike.appendChild(heartIcon);
@@ -64,9 +64,9 @@ export function mediaFactory (data) {
     }
 
     function lienMediaDom (balise) {
-        let href = document.createElement('h2');
-            href.setAttribute('src','#');
-            href.setAttribute('title',"vue rapproché du média");
+        let href = document.createElement('a');
+            href.setAttribute('href','#');
+           // href.setAttribute('title',"vue rapprochée du média");
         href.appendChild(balise);
         return href;
     }
