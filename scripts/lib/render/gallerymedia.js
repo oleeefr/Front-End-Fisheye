@@ -6,11 +6,13 @@ export function displayGallery (collectionMedia) {
     let gallerySection = document.querySelector("section .wrapper");
         gallerySection.innerHTML="";
     let nbreTotaleLikes =0;
-
+    let id=0;
+    
     collectionMedia.forEach(media => {
-        let mediaModelDom = mediaFactory(media);
+        let mediaModelDom = mediaFactory(media,id);
         gallerySection.appendChild(mediaModelDom);
         nbreTotaleLikes += media.likes;
+        id++;
     });
 
     ticketLikesAndPrice().setLikes(nbreTotaleLikes);

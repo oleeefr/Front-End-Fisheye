@@ -13,6 +13,7 @@ export async function index () {
 
     let render = await import ('../controller/photographer.js');
     let renderForm = await import ('../../utils/form/contactForm.js');
+    let renderBtnLightBox = await import ('../../lib/render/lightBox.js');
 
     let articlePhotographDescription = document.querySelector('.photograph-header article');
     let h2 = document.createElement( 'h2');
@@ -44,7 +45,6 @@ export async function index () {
 
     // close modal event
     renderForm.closeBtn.addEventListener("click", renderForm.closeModal);
-
  }
  
  //// fonction de render (de Vue) pour afficher une page 404..
