@@ -294,8 +294,8 @@ form input {
   position: absolute;
 }
 
-.lightBox .wrapper {
-  visibility: hidden;
+.lightBox {
+  visibility: collapse;
   position: fixed;
   background: #FFFFFF;
   width: 100%;
@@ -305,6 +305,10 @@ form input {
   opacity: 0.97;
   display: grid;
   place-items: center;
+}
+.lightBox .wrapper {
+  height: 84vh;
+  width: 84vh;
 }
 .lightBox .wrapper .close {
   color: #901C1C;
@@ -341,8 +345,28 @@ form input {
   background-color: transparent;
 }
 .lightBox .wrapper .container {
-  height: 80%;
-  width: 70%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.lightBox .wrapper .container img {
+  width: 60%;
+  object-fit: cover;
+  border-radius: 16px;
+}
+.lightBox .wrapper .container .videoMedia {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  height: 50rem;
+  border-radius: 0.25rem;
+}
+.lightBox .wrapper .container .textuel {
+  align-items: center;
+}
+.lightBox .wrapper .container .textuel h2 {
+  color: #901c1c;
+  font-size: 17px;
 }
 
 /*modal light box*/

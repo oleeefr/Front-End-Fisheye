@@ -15,6 +15,10 @@ export function LightBoxFactory (listGallery) {
         navLightBoxBtnRight.setAttribute('class',"right navBtn");
         navLightBoxBtnRight.appendChild(iconRight);
 
+    let h2 = document.createElement('h2');
+    let divTextuel = document.createElement("div");
+        
+   
     let containerMedia = document.createElement("div");
     containerMedia.setAttribute('class',"container");
 
@@ -25,7 +29,7 @@ export function LightBoxFactory (listGallery) {
     // Selection Dom
     let lightBoxBtn = document.querySelectorAll("article a");
         lightBoxBtn.innerHTML="";
-
+    let divLightBox = document.querySelector(".lightBox");
     let modalLightBox = document.querySelector(".lightBox .wrapper");
         modalLightBox.appendChild(closeBtn);
         modalLightBox.appendChild(navLightBoxBtnRight);
@@ -41,12 +45,6 @@ export function LightBoxFactory (listGallery) {
     navLightBoxBtnLeft.addEventListener('click', function () {slideLightBox(navLightBoxBtnLeft.value)});
     navLightBoxBtnRight.addEventListener('click', function () {slideLightBox(navLightBoxBtnRight.value)});        
 
-    // réindexage des boutons lightBox
-    function indexBtnLightBox (bouton) {
-        for (let index = 0; index < bouton.length; index++) 
-            bouton[index].setAttribute ("title",index+"- vue rapprochée du média");  
-    }
-
     // Chargement de la lightBox
     function openLightBox (balise) {
         let index = balise.id;
@@ -55,12 +53,13 @@ export function LightBoxFactory (listGallery) {
     }
 
     function closeLightBox () {
-        modalLightBox.style.visibility= "collapse";
+        divLightBox.style.visibility= "collapse";
+        containerMedia.innerHTML="";
     }
 
     function dysplayLightBox (index) {
         console.log(listGallery[index]);
-        modalLightBox.style.visibility= "visible";
+        divLightBox.style.visibility= "visible";
         containerMedia.innerHTML="";
         slideLightBox(index);
     }
@@ -71,6 +70,8 @@ export function LightBoxFactory (listGallery) {
             navLightBoxBtnRight.value= nextIndexMedia;
             containerMedia.innerHTML="";
             containerMedia.appendChild(typeMedia);
+            containerMedia.appendChild(divTextuel);
+           
             console.log("prev :"+previousIndexMedia+" next :"+nextIndexMedia);
             console.log("------------------");
     }
@@ -100,8 +101,17 @@ export function LightBoxFactory (listGallery) {
             typeMedia = document.createElement('video');
                 typeMedia.setAttribute('class','videoMedia');
                 typeMedia.setAttribute('aria-label',currentMedia.title);
+                typeMedia.setAttribute('controls',"");
+                typeMedia.setAttribute('autoplay',"");
+                typeMedia.setAttribute('controlslist',"nofullscreen noremoteplayback");
             typeMedia.appendChild(video);
         }
+
+        divTextuel.innerHTML="";
+        h2 = document.createElement('h2');
+        h2.innerText=currentMedia.title;
+        divTextuel.setAttribute('class','textuel');
+        divTextuel.appendChild(h2);
         console.log("prev :"+previousIndexMedia+", current :"+indexIntImg, "next :"+nextIndexMedia);
         return {previousIndexMedia, typeMedia, nextIndexMedia};
     }
