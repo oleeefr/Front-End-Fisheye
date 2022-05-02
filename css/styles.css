@@ -294,7 +294,7 @@ form input {
   position: absolute;
 }
 
-.lightBox {
+.lightBox .wrapper {
   visibility: hidden;
   position: fixed;
   background: #FFFFFF;
@@ -306,7 +306,7 @@ form input {
   display: grid;
   place-items: center;
 }
-.lightBox .close {
+.lightBox .wrapper .close {
   color: #901C1C;
   background-color: transparent;
   border: none;
@@ -316,7 +316,7 @@ form input {
   right: 1.1rem;
   cursor: pointer;
 }
-.lightBox .left {
+.lightBox .wrapper .left {
   position: absolute;
   left: 1rem;
   top: 50%;
@@ -328,7 +328,7 @@ form input {
   border: none;
   display: flex;
 }
-.lightBox .right {
+.lightBox .wrapper .right {
   position: absolute;
   right: 1rem;
   top: 50%;
@@ -340,7 +340,7 @@ form input {
   display: flex;
   background-color: transparent;
 }
-.lightBox .container {
+.lightBox .wrapper .container {
   height: 80%;
   width: 70%;
 }

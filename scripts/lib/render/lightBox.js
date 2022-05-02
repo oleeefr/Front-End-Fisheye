@@ -2,7 +2,7 @@ import { routes } from "../../config/routes.js";
 
 export function LightBoxFactory (listGallery) {
 
-    // création de la lightBox
+    // création DOM de la lightBox
     let iconLeft = document.createElement("em");
         iconLeft.setAttribute('class', "fas fa-chevron-left");
     let navLightBoxBtnLeft = document.createElement('button');
@@ -26,21 +26,12 @@ export function LightBoxFactory (listGallery) {
     let lightBoxBtn = document.querySelectorAll("article a");
         lightBoxBtn.innerHTML="";
 
-    let modalLightBox = document.querySelector(".lightBox");
+    let modalLightBox = document.querySelector(".lightBox .wrapper");
         modalLightBox.appendChild(closeBtn);
         modalLightBox.appendChild(navLightBoxBtnRight);
         modalLightBox.appendChild(containerMedia);
         modalLightBox.appendChild(navLightBoxBtnLeft);
 
-    // let closeBtn = document.querySelector(".lightBox .close");
-    //let navLightBoxBtn = document.querySelectorAll(".lightBox .navBtn");
-    //let navLightBoxBtnLeft = document.querySelector(".lightBox .left");
-    //let navLightBoxBtnRight = document.querySelector(".lightBox .right");
-    //let containerMedia = document.querySelector(".lightBox .container");
-    let session =0;
-    
-
-    //indexBtnLightBox(lightBoxBtn);
     lightBoxBtn.forEach((ahref) => {
         ahref.addEventListener('click', function () {openLightBox(ahref)});
     });
@@ -49,12 +40,6 @@ export function LightBoxFactory (listGallery) {
 
     navLightBoxBtnLeft.addEventListener('click', function () {slideLightBox(navLightBoxBtnLeft.value)});
     navLightBoxBtnRight.addEventListener('click', function () {slideLightBox(navLightBoxBtnRight.value)});        
-
-    /*
-    navLightBoxBtn.forEach((Btn)=> 
-    Btn.addEventListener('click', function () {
-                        slideLightBox(Btn.value);
-    }));*/
 
     // réindexage des boutons lightBox
     function indexBtnLightBox (bouton) {
@@ -71,10 +56,8 @@ export function LightBoxFactory (listGallery) {
 
     function closeLightBox () {
         modalLightBox.style.visibility= "collapse";
-        session = 0;
     }
 
-    
     function dysplayLightBox (index) {
         console.log(listGallery[index]);
         modalLightBox.style.visibility= "visible";
@@ -88,34 +71,18 @@ export function LightBoxFactory (listGallery) {
             navLightBoxBtnRight.value= nextIndexMedia;
             containerMedia.innerHTML="";
             containerMedia.appendChild(typeMedia);
-            // session =0;
-            console.log("session à la fin de slideLightBox.."+session);
             console.log("prev :"+previousIndexMedia+" next :"+nextIndexMedia);
             console.log("------------------");
     }
 
     function readListMediaSort (indexImg) {
-        console.log("session à l'entrée: "+session);
+
         console.log("index img à l'entrée: "+indexImg);
         let typeMedia;
         let indexIntImg = parseInt(indexImg);
         let nextIndexMedia, previousIndexMedia, currentMedia;
-        
-      // if(session ==0) {
-            console.log("dans la condit if: "+session);
-            console.log("current image : "+indexIntImg);
-            currentMedia = listGallery[indexIntImg];
-            session++;
-            console.log("session après +: "+session);
-        /*    } else { 
-            console.log("current image : "+indexIntImg);
-            indexIntImg--;
-            console.log("correction image --: "+indexIntImg);
-            currentMedia = listGallery[indexIntImg];
-            session =0; 
-            console.log("session après : "+session); 
-            }*/
-
+        console.log("current image : "+indexIntImg);
+        currentMedia = listGallery[indexIntImg];
         nextIndexMedia = ((indexIntImg+1) >= listGallery.length)? 0:indexIntImg+1;
         previousIndexMedia = ((indexIntImg-1) <0)? listGallery.length-1:indexIntImg-1;
         let lienMedia = routes.__DIRNAME_MEDIA()+currentMedia.photographerId+"/";
@@ -138,38 +105,4 @@ export function LightBoxFactory (listGallery) {
         console.log("prev :"+previousIndexMedia+", current :"+indexIntImg, "next :"+nextIndexMedia);
         return {previousIndexMedia, typeMedia, nextIndexMedia};
     }
-
-    function renderNavBtn () {
-
-        let iconLeft = document.createElement("em");
-            iconLeft.setAttribute('class', "fas fa-chevron-left");
-        let boutonLeft = document.createElement('button');
-            boutonLeft.setAttribute('class',"left navBtn");
-        boutonLeft.appendChild(iconLeft);
-
-        let iconRight = document.createElement("em");
-            iconRight.setAttribute('class', "fas fa-chevron-left");
-        let boutonRight = document.createElement('button');
-            boutonRight.setAttribute('class',"left navBtn");
-        boutonRight.appendChild(iconRight);
-
-        let containerImage = doucment.createElement("div");
-            containerImage.setAttribute('class',"container");
-
-        let boutonFermer = document.createElement('button');
-            boutonFermer.setAttribute('class',"close");
-            boutonFermer.textContent = "X";
-        /*
-        <button class="close" aria-label="Fermer la fenêtre" tab>✕</button>
-       
-        <button class="left navBtn" aria-label="média précédent">
-          <em class="fas fa-chevron-left"></em>
-        </button>
-        <div class="container"></div>
-        <button class="right navBtn" aria-label="media suivant">
-            <em class="fas fa-chevron-right"></em>
-        </div>
-        */
-    }
-
 }
