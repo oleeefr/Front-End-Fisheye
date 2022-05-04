@@ -31,7 +31,8 @@ export function mediaFactory (data,idaHref) {
             videotype.setAttribute('class','videoMedia');
             videotype.setAttribute('aria-label',title);
             videotype.setAttribute('controls',"");
-            videotype.setAttribute('controlslist',"nodownload nofullscreen noremoteplayback");
+            videotype.setAttribute('muted',"");
+            //videotype.setAttribute('controlslist',"nodownload nofullscreen noremoteplayback");
         let lienMedia = routes.__DIRNAME_MEDIA()+photographerId+"/"+video;
         let source = document.createElement ('source');
             source.setAttribute('src',lienMedia);

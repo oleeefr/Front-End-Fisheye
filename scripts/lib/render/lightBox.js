@@ -7,26 +7,25 @@ export function LightBoxFactory (listGallery) {
         iconLeft.setAttribute('class', "fas fa-chevron-left");
     let navLightBoxBtnLeft = document.createElement('button');
         navLightBoxBtnLeft.setAttribute('class',"left navBtn");
+        navLightBoxBtnLeft.setAttribute('aria-label','média précèdent');
         navLightBoxBtnLeft.appendChild(iconLeft);
-
     let iconRight = document.createElement("em");
         iconRight.setAttribute('class', "fas fa-chevron-right");
     let navLightBoxBtnRight = document.createElement('button');
         navLightBoxBtnRight.setAttribute('class',"right navBtn");
+        navLightBoxBtnRight.setAttribute('aria-label','média suivant');
         navLightBoxBtnRight.appendChild(iconRight);
-
     let h2 = document.createElement('h2');
     let divTextuel = document.createElement("div");
-        
-   
     let containerMedia = document.createElement("div");
     containerMedia.setAttribute('class',"container");
-
     let closeBtn = document.createElement('button');
-    closeBtn.setAttribute('class',"close");
+        closeBtn.setAttribute('class',"close");
+        closeBtn.setAttribute('aria-label','Fermer la fenêtre');
     closeBtn.textContent = "X";
 
     // Selection Dom
+    let galerieMedia = document.querySelector('#gallery-media');
     let lightBoxBtn = document.querySelectorAll("article a");
         lightBoxBtn.innerHTML="";
     let divLightBox = document.querySelector(".lightBox");
@@ -36,6 +35,7 @@ export function LightBoxFactory (listGallery) {
         modalLightBox.appendChild(containerMedia);
         modalLightBox.appendChild(navLightBoxBtnLeft);
 
+    // Affection des fonctions sur les Butons        
     lightBoxBtn.forEach((ahref) => {
         ahref.addEventListener('click', function () {openLightBox(ahref)});
     });
@@ -45,35 +45,57 @@ export function LightBoxFactory (listGallery) {
     navLightBoxBtnLeft.addEventListener('click', function () {slideLightBox(navLightBoxBtnLeft.value)});
     navLightBoxBtnRight.addEventListener('click', function () {slideLightBox(navLightBoxBtnRight.value)});        
 
+    divLightBox.addEventListener("keydown", (e) => {
+
+        if (e.code === "Escape") 
+            closeLightBox();
+        
+        if (e.code === "ArrowRight") 
+            slideLightBox(navLightBoxBtnRight.value)
+        
+        if (e.code === "ArrowLeft") 
+            slideLightBox(navLightBoxBtnLeft.value);
+      });
+
     // Chargement de la lightBox
     function openLightBox (balise) {
+
         let index = balise.id;
         console.log(index);
         dysplayLightBox(index);
+        galerieMedia.style.display = "none";
     }
 
+    // Fermeture de la lightBox
     function closeLightBox () {
+
         divLightBox.style.visibility= "collapse";
         containerMedia.innerHTML="";
+        galerieMedia.style.display = "block";
     }
 
+    // Affichage de la lightBox
     function dysplayLightBox (index) {
+
         console.log(listGallery[index]);
         divLightBox.style.visibility= "visible";
         containerMedia.innerHTML="";
         slideLightBox(index);
+        closeBtn.focus();
     }
 
+    // 
     function slideLightBox (index) {
+
             const {previousIndexMedia, typeMedia, nextIndexMedia} = readListMediaSort(index);
             navLightBoxBtnLeft.value= previousIndexMedia;
             navLightBoxBtnRight.value= nextIndexMedia;
             containerMedia.innerHTML="";
             containerMedia.appendChild(typeMedia);
-            containerMedia.appendChild(divTextuel);
-           
+            containerMedia.appendChild(divTextuel);  
             console.log("prev :"+previousIndexMedia+" next :"+nextIndexMedia);
             console.log("------------------");
+
     }
 
     function readListMediaSort (indexImg) {
@@ -113,6 +135,7 @@ export function LightBoxFactory (listGallery) {
         divTextuel.setAttribute('class','textuel');
         divTextuel.appendChild(h2);
         console.log("prev :"+previousIndexMedia+", current :"+indexIntImg, "next :"+nextIndexMedia);
+        
         return {previousIndexMedia, typeMedia, nextIndexMedia};
     }
 }

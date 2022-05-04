@@ -1,14 +1,18 @@
 
 const modal = document.getElementById("contact_modal");
+const galerieMedia = document.querySelector("#gallery-media");  
+const inputName = document.querySelector("input[name=nom]");
+const closeBtnForm = document.querySelector(".close_bouton");
+
+let title;
 
 //// Fonction permettant d'ouvrir la modale du fomulaire de contact
 export function displayModal() {
     let main = document.querySelector('#main');
         main.setAttribute('aria-hidden', 'true');
-        modal.setAttribute('aria-hidden','false');
-   // let firstFocusInput = document.querySelector("input");
-   //     firstFocusInput.focus();
 	modal.style.display = "block";
+    renderTitleForm();
+    closeBtnForm.focus();
 }
 
 //// Fonction permettant de fermer la modale du fomulaire de contact
@@ -19,10 +23,12 @@ export function closeModal() {
     let formulaire = document.querySelector("form[name=form]");
     formulaire.reset ();
     modal.style.display = "none";
+    galerieMedia.style.display = "block";
 }
 
-export function renderTitleForm (name) {
-    let title = modal.querySelector('h2');
+export function renderTitleForm () {
+    let name = document.querySelector("dt").textContent;
+    title = modal.querySelector('header h2');
         title.innerHTML= "Contactez-moi<br />"+name;
 }
 
