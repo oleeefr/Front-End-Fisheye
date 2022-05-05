@@ -15,6 +15,7 @@ export async function index () {
     let renderForm = await import ('../../utils/form/contactForm.js');
     let renderBtnLightBox = await import ('../../lib/render/lightBox.js');
 
+    // Bannière information du Photographe
     let articlePhotographDescription = document.querySelector('.photograph-header article');
     let h2 = document.createElement( 'h2');
         h2.setAttribute('class','hidden');
@@ -26,6 +27,7 @@ export async function index () {
 
     let thumbnailPhotograph = document.querySelector('.photograph-header article.blockPortrait');
     let img = render.photographersHtml.getUserThumbnail();
+    thumbnailPhotograph.appendChild(h2);
     thumbnailPhotograph.appendChild(img);
     
     
