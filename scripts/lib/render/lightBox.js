@@ -7,7 +7,7 @@ export function LightBoxFactory (listGallery) {
         iconLeft.setAttribute('class', "fas fa-chevron-left");
     let navLightBoxBtnLeft = document.createElement('button');
         navLightBoxBtnLeft.setAttribute('class',"left navBtn");
-        navLightBoxBtnLeft.setAttribute('aria-label','média précèdent');
+        navLightBoxBtnLeft.setAttribute('aria-label','média précédent');
         navLightBoxBtnLeft.appendChild(iconLeft);
     let iconRight = document.createElement("em");
         iconRight.setAttribute('class', "fas fa-chevron-right");
