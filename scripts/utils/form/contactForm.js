@@ -45,4 +45,5 @@ export function renderLog() {
 
 export const modalBtn = document.querySelector("#contact");
 export const closeBtn = document.querySelector(".close_bouton");
+export const valid = document. querySelector("form[name=form]");
 

@@ -4,6 +4,7 @@
     display: none;
 }
 
+/* Bannière Principale de profil du Photographe */
 .photograph-header {
     background-color: #FAFAFA;
     height: 300px;
@@ -99,6 +100,7 @@
     font-weight: normal;
 }
 
+/* Galerie média du Photographe */
 #gallery-media {
 
     $fontSizeDef :20px;
@@ -191,6 +193,7 @@
     }
 }
 
+/* Fomulaire de contact */
 #contact_modal {
 
     form {
@@ -230,6 +233,7 @@
     
 }
 
+/* Encart de la somme des likes et Tarifs */
 #ticket {
     align-items: center;
     background: #db8876;

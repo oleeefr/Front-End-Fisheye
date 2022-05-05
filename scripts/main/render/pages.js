@@ -45,6 +45,13 @@ export async function index () {
 
     // close modal event
     renderForm.closeBtn.addEventListener("click", renderForm.closeModal);
+
+    // traitement de formulaire de contact
+    renderForm.valid.onsubmit = (e) => {
+        e.preventDefault();
+        renderForm.renderLog();
+        renderForm.closeModal();
+    };
  }
  
  //// fonction de render (de Vue) pour afficher une page 404..
