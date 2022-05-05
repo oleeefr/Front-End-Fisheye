@@ -40,10 +40,10 @@ export async function index () {
      // ticket price
      render.ticketHtml();
 
-     // launch modal event
+     // Ouveture du formulaire de contact
     renderForm.modalBtn.addEventListener("click", renderForm.displayModal);
 
-    // close modal event
+    // Fermeture du formulaire de contact
     renderForm.closeBtn.addEventListener("click", renderForm.closeModal);
 
     // traitement de formulaire de contact
