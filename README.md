@@ -6,9 +6,7 @@
 
 - Les autres Branches sont des branches d'évolution de fonctionnalité et/ou d'architechture Design
 
-- La Branche de production est la branche 'p4Compilation' où tous les fichiers js, css ont été compilés & autopréfixé.
-
-- le projet est monté sur un Gabarit Simplifié de Base segmentant chaque fonction et couches comme ci dessous:
+- le projet est monté sur un Template Simplifié segmentant chaque fonction et les disposant dans les couches ci dessous:
 
 Routeur >> View (Html)  && View (Js) >> Controller(Js) >> Request(Js) >> Dao(Js)> >> Data(Js) 
 
